@@ -1,0 +1,31 @@
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Clean app
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="cleanApp-list1">
+      <ion-item color="none" menuClose="" on-click="goToHome()" id="cleanApp-list-item1">
+        <ion-avatar item-left>
+          <img />
+        </ion-avatar>
+        <h2>
+          Fidelis Guimarães
+        </h2>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToCart()" id="cleanApp-list-item2">
+        <ion-icon name="ionic" item-left></ion-icon>
+        Cart
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToCloud()" id="cleanApp-list-item3">
+        <ion-icon name="ionic" item-left></ion-icon>
+        Cloud
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
