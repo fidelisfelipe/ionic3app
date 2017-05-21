@@ -6,9 +6,9 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+	title: string;
   constructor(public navCtrl: NavController) {
-
+	  this.title = "Ionic APP";
   }
 
 }

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Debug</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Debug</h3>
+  <ion-list>
+
+  <ion-item ion-item *ngFor="let p of pages">
+    <ion-label>{{p.title}}</ion-label>
+    <ion-checkbox ></ion-checkbox>
+  </ion-item>
+
+</ion-list>
+  
+</ion-content>
