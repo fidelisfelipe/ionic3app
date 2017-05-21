@@ -11,8 +11,25 @@
   <h3>{{title}}</h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will show you the way.
+    Welcome back, {{ user.details.name }}<br/>
+   
+    
   </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  
+  <ion-img width="80" height="80" src="{{ user.details.image }}"></ion-img>
+   {{ user.details.username }} <br/>
+   {{ user.details.email }} <br/>
+  
+  <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+      <button ion-button icon-only menuToggle>
+		 <ion-icon name="menu"></ion-icon>
+	  </button>
+    </ion-buttons>
+    
+    
+  
+    
 </ion-content>

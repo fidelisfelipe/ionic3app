@@ -11,7 +11,6 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "start": "ionic build | ionic serve"
-    
   },
   "dependencies": {
     "@angular/common": "4.1.0",
@@ -25,6 +24,7 @@
     "@ionic-native/core": "3.7.0",
     "@ionic-native/splash-screen": "3.7.0",
     "@ionic-native/status-bar": "3.7.0",
+    "@ionic/cloud-angular": "^0.12.0",
     "@ionic/storage": "2.0.1",
     "ionic-angular": "3.2.1",
     "ionicons": "3.0.0",
