@@ -6,8 +6,13 @@
   </ion-header>
 
   <ion-content>
+    <ion-fab top right edge>
+    	  <button ion-fab mini icon-only menuToggle (click)="logout()" [hidden]="notAuth()">
+        	<ion-icon name="exit"></ion-icon>
+      	  </button>
+    </ion-fab>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" [hidden]="p.hidden">
         {{p.title}}
       </button>
     </ion-list>

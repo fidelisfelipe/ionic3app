@@ -8,28 +8,50 @@
 </ion-header>
 
 <ion-content padding>
+	<ion-fab right top [hidden]="notAuth()">
+	  <button ion-fab color="light"><ion-icon name="settings"></ion-icon></button>
+	  <ion-fab-list side="left">
+	    <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+	    <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+	    <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+	    <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+	  </ion-fab-list>
+	</ion-fab>
+
   <h3>{{title}}</h3>
 
   <p>
     Welcome back, {{ user.details.name }}<br/>
-   
-    
   </p>
+
+  <ion-img width="80" height="80" src=""></ion-img>
+
+<ion-list>
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="{{ user.details.image }}">
+    </ion-avatar>
+    <h2>{{user.details.name}}</h2>
+    <p>{{user.details.email}}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Photo</ion-label>
+    <ion-input type="text" [(ngModel)]="user.details.image" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.details.name" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Username</ion-label>
+    <ion-input type="email" [(ngModel)]="user.details.email" disabled></ion-input>
+  </ion-item>
   
-  <ion-img width="80" height="80" src="{{ user.details.image }}"></ion-img>
-   {{ user.details.username }} <br/>
-   {{ user.details.email }} <br/>
-  
-  <ion-buttons end>
-      <button ion-button icon-only (click)="logout()">
-        <ion-icon name="exit"></ion-icon>
-      </button>
-      <button ion-button icon-only menuToggle>
-		 <ion-icon name="menu"></ion-icon>
-	  </button>
-    </ion-buttons>
-    
-    
-  
-    
+  <button ion-button color="primary" full (click)="save()">OK</button>
+
+
+</ion-list>
+
+
 </ion-content>

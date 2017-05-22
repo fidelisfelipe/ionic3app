@@ -16,8 +16,8 @@ import { HomePage } from '../home/home';
 export class LoginPage {
   btnSubmit: Object = {title:''};
   showLogin:boolean = true;
-  email:string = '';
-  password:string = '';
+  email:string = 'test@test.com';
+  password:string = 'test';
   name:string = '';
 
 constructor(public navCtrl: NavController, public auth:Auth, public user: User, public alertCtrl: AlertController, public loadingCtrl:LoadingController) {}
@@ -39,7 +39,7 @@ constructor(public navCtrl: NavController, public auth:Auth, public user: User, 
 	      if(this.email === '' || this.password === '') {
 	        let alert = this.alertCtrl.create({
 	          title:'Register Error', 
-	          subTitle:'All fields are rquired',
+	          subTitle:'All fields are required',
 	          buttons:['OK']
 	        });
 	        alert.present();

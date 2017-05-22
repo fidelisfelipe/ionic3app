@@ -17,7 +17,8 @@ export class MyApp {
 
   rootPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, hidden: boolean}>;
+  
   title: string;
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth:Auth) {
     this.initializeApp();
@@ -28,10 +29,10 @@ export class MyApp {
 	
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Login', component: LoginPage },
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Debug', component: DebugPage }
+      { title: 'Login', component: LoginPage, hidden: this.isAuth()},
+      { title: 'Home', component: HomePage , hidden: this.notAuth()},
+      { title: 'List', component: ListPage , hidden: this.notAuth()},
+      { title: 'Debug', component: DebugPage , hidden: this.notAuth() }
     ];
 
   }
@@ -56,5 +57,15 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+  logout() {
+	this.auth.logout();
+	this.nav.setRoot(LoginPage);
+  }
+  isAuth() {
+	 return this.auth.isAuthenticated();
+  }
+  notAuth() {
+	return !this.auth.isAuthenticated();
   }
 }
